@@ -2,11 +2,10 @@
 % Please edit documentation in R/d3_bar.R
 \name{d3_bar}
 \alias{d3_bar}
-\title{Bar plot D3}
+\title{Bar plot made with D3}
 \usage{
 d3_bar(data, x_var, y_var = NULL, title = NULL, x_lab = NULL,
-  y_lab = NULL, title_size = 18, color = "black", border = NULL,
-  opacity = 1)
+  y_lab = NULL, color = "black", border = NULL, opacity = 1)
 }
 \arguments{
 \item{data}{A Dataset to use for plotting. Should be a dataframe}
@@ -17,11 +16,9 @@ d3_bar(data, x_var, y_var = NULL, title = NULL, x_lab = NULL,
 
 \item{title}{Title for the plot, placed above plot}
 
-\item{x_lab}{X axis label. Default is *str_to_title(x_var)*}
+\item{x_lab}{X axis label. Default is *x_var's* object name}
 
-\item{y_lab}{Y axis label. Default is *str_to_title(y_var)*}
-
-\item{title_size}{Text size of the title}
+\item{y_lab}{Y axis label. Default is *y_var's* ovject name}
 
 \item{color}{Color of the bars. This value can be a hex color, color name, or the column name from the dataframe}
 
@@ -33,7 +30,7 @@ d3_bar(data, x_var, y_var = NULL, title = NULL, x_lab = NULL,
 An HTML widget that displays a bar plot made with D3.js
 }
 \description{
-Bar plot D3
+Bar plot made with D3
 }
 \examples{
 # not run:

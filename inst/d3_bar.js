@@ -1,6 +1,5 @@
 // options (sub)title
 var title_text = options.title.title;
-var title_size = options.title.size;
 
 //options axis
 var x_title = options.xaxis.title;
@@ -116,7 +115,7 @@ if (title_text !== null) {
 svg.append('text')
   .attr('x', svg_width()* 0.01)
   .attr('y', 18)
-  .style('font-size', title_size)
+  .style('font-size', "18px")
   .style('font-family', 'sans-serif')
   .text(title_text);
 }
