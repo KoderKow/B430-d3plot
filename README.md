@@ -27,6 +27,6 @@ d3_scatter(mtcars, mph, hp)
 
 <center>
 
-![](inst/figures/scatter_gif.gif)
+![Basic Interactive Scatter Plot](https://i.imgur.com/iTKEwp0.gif)
 
 </center>
