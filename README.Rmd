@@ -37,5 +37,5 @@ d3_scatter(mtcars, mph, hp)
 ```
 
 <center>
-  ![](`r here::here("inst", "figures", "scatter_gif.gif")`)
+  ![](inst/figures/scatter_gif.gif)
 </center>
