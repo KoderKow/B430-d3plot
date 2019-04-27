@@ -2,6 +2,7 @@
 
 export(d3_bar)
 export(d3_gadget)
+export(d3_histogram)
 export(d3_scatter)
 import(dplyr)
 import(htmlwidgets)
