@@ -12,7 +12,11 @@ Imports:
     dplyr,
     r2d3,
     rlang,
-    here
+    here,
+    shiny,
+    miniUI,
+    htmlwidgets,
+    stringr
 Suggests: knitr
 VignetteBuilder: knitr
 RoxygenNote: 6.1.1

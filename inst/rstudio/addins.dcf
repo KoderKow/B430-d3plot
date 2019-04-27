@@ -1,0 +1,4 @@
+Name: d3plot
+Description: Explore data with D3.js plots
+Binding: d3_gadget
+Interactive: true

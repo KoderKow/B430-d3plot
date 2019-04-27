@@ -46,7 +46,7 @@ d3_bar <- function (data, x_var, y_var = NULL, title = NULL, x_lab = NULL, y_lab
   }
 
   r2d3(data = tmp,
-       script = here::here("inst", "d3_bar.js"),
+       script = "inst/d3_bar.js",
        options = list(x_name = x_name,
                       y_name = y_name,
                       title = list(title = title),
