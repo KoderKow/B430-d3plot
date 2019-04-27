@@ -1,0 +1,18 @@
+Type: Package
+Package: d3plot
+Title: Create D3 Visualizations
+Version: 0.1.0
+Author: Jags
+Maintainer: <jags@iu.edu>
+Description: This package was initially constructed as a final project for PBHL-B430 Advanced Computing. This package gives options for plotting scatter plots, bar plots, lines plots, and histograms. All plots are created with D3.js code and are generated with the r2d3 library. A Shiny Gadget is also available to show different basic views of the data. 
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+Imports:
+    dplyr,
+    r2d3,
+    rlang,
+    here
+Suggests: knitr
+VignetteBuilder: knitr
+RoxygenNote: 6.1.1
