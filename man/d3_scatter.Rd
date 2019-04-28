@@ -6,7 +6,7 @@
 \usage{
 d3_scatter(data, x_var, y_var, title = NULL, x_lab = NULL,
   y_lab = NULL, point_size = 3, color = "black", stroke_width = 1,
-  opacity = 1)
+  opacity = 1, transition_duration = 0)
 }
 \arguments{
 \item{data}{A Dataset to use for plotting. Should be a dataframe}
@@ -28,6 +28,8 @@ d3_scatter(data, x_var, y_var, title = NULL, x_lab = NULL,
 \item{stroke_width}{Border thickness for each data point}
 
 \item{opacity}{transparency level}
+
+\item{transition_duration}{Duration for the points to transtion}
 }
 \value{
 An HTML widget that displays a scatter plot made with D3.js

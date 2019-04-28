@@ -10,6 +10,7 @@
 #' @param color Color of the points. This value can be a hex color, color name, or the column name from the dataframe
 #' @param stroke_width Border thickness for each data point
 #' @param opacity transparency level
+#' @param transition_duration Duration for the points to transtion
 #'
 #' @return An HTML widget that displays a scatter plot made with D3.js
 #' @export
@@ -21,10 +22,10 @@
 #' @examples
 #' # not run:
 #' # d3_scatter(mtcars, mpg, hp)
-d3_scatter <- function (data, x_var, y_var, title = NULL, x_lab = NULL, y_lab = NULL, point_size = 3, color = "black", stroke_width = 1, opacity = 1) {
+d3_scatter <- function (data, x_var, y_var, title = NULL, x_lab = NULL, y_lab = NULL, point_size = 3, color = "black", stroke_width = 1, opacity = 1, transition_duration = 0) {
 
-  x_name <- quo_name(enquo(x_var))
-  y_name <- quo_name(enquo(y_var))
+  x_name <- rlang::quo_name(rlang::enquo(x_var))
+  y_name <- rlang::quo_name(rlang::enquo(y_var))
 
   if(is.null(x_lab)) x_lab <- x_name
   if(is.null(y_lab)) y_lab <- y_name
@@ -44,6 +45,7 @@ d3_scatter <- function (data, x_var, y_var, title = NULL, x_lab = NULL, y_lab = 
                       layout = list(margin = list(l = 50,
                                                   r = 50,
                                                   b = 80,
-                                                  t = 50))))
+                                                  t = 50)),
+                      transition_duration = transition_duration))
 
 }

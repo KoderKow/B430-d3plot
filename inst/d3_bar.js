@@ -25,7 +25,7 @@ svg.html("")
 .selectAll('rect')
 .data(data)
 .enter().append('rect')
-  .attr('height', function(d) {return (d.y * col_heigth()); })
+  .attr('height', 0)
   .attr('width', col_width() * 0.9)
   .attr('x', function(d, i) {return (i * col_width()) + (svg_width()* layer_left); })
   .attr('y', function(d) {return col_top() + ((actual_max() - d.y) * col_heigth()); })
@@ -44,7 +44,11 @@ svg.html("")
        tt.transition().
        duration(500).
        style("opacity", 0);
-       });
+       })
+    .transition()
+    .ease(d3.easeLinear)
+    .duration(options.transition_duration)
+    .attr('height', function(d) {return (d.y * col_heigth()); });
 
 // Colors
 var hex_check = /^#[0-9A-F]{6}$/i.test(options.bar.color);
