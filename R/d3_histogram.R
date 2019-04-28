@@ -30,7 +30,7 @@ d3_histogram <- function (data, x_var,
   if (is.null(x_lab)) x_lab <- x_name
   if (is.null(y_lab)) y_lab <- "Frequency"
 
-  n_bins <- nrow(data)
+  n_bins <- sqrt(nrow(data))
 
   r2d3::r2d3(data = dplyr::pull(data, !!x_quo),
        script = "inst/d3_histogram.js",

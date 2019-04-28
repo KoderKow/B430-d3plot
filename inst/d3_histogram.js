@@ -7,9 +7,7 @@ var x_max = d3.max(data);
 var x_min = d3.min(data);
 
 // options marker
-// var size = options.marker.size;
 var color = options.bar.color;
-// var sw = options.marker.strokewidth;
 var opacity = options.bar.opacity;
 var border = options.bar.border;
 
@@ -58,7 +56,21 @@ bar.append("rect")
     .attr("height", function(d) { return graph_height - y(d.length); })
     .attr("opacity", opacity)
     .attr('stroke', border)
-    .attr('fill', options.bar.color);
+    .attr('fill', options.bar.color)
+    .on("mouseover", function(d) {
+       tt.transition()
+         .duration(200)
+         .style("opacity", 0.8);
+       tt.html(x_title + ": " + d.x0 + " to " + d.x1 + "<br/>Count: " + d.length +
+              "<br/>Frequency: " + d.length/data.length)
+         .style("left", d3.event.pageX + 10 + "px")
+         .style("top", d3.event.pageY + 10 + "px");
+    })
+    .on("mouseout", function(d) {
+       tt.transition().
+       duration(500).
+       style("opacity", 0);
+    });
 
 // add the x Axis
 g.append("g")
@@ -92,3 +104,14 @@ svg.append('text')
   .style('font-family', 'sans-serif')
   .text(title_text);
 }
+
+// Create the div to serve as tooltip
+var tt = d3.select("body")
+.append("div")
+  .style("opacity", 0)
+  .style("background", "rgba(255, 255, 255, .90)")
+  .style("position", "absolute")
+  .style("padding", "10px")
+  .style("border-radius", "10px")
+  .style("border", "1px solid black")
+  .style("background-color", "lightgrey");
