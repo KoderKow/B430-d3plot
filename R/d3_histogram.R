@@ -8,6 +8,7 @@
 #' @param color Color of the bars. This value can be a hex color, color name, or the column name from the dataframe
 #' @param border Color of the border of the bars
 #' @param opacity transparency level
+#' @param transition_duration Duration for the bars to transtion
 #'
 #' @return An HTML widget that displays a bar plot made with D3.js
 #' @export
@@ -21,7 +22,8 @@
 #' # d3_histogram(mtcars, mpg)
 d3_histogram <- function (data, x_var,
                           title = NULL, x_lab = NULL, y_lab = NULL,
-                          color = "black", border = NULL, opacity = 1) {
+                          color = "black", border = NULL, opacity = 1,
+                          transition_duration = 0) {
 
   x_quo <- rlang::enquo(x_var)
 
@@ -42,5 +44,6 @@ d3_histogram <- function (data, x_var,
                       bar = list(color = color,
                                  border = border,
                                  opacity = opacity),
-                      n_bins = n_bins))
+                      n_bins = n_bins,
+                      transition_duration = transition_duration))
 }

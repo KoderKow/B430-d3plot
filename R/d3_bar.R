@@ -9,6 +9,7 @@
 #' @param color Color of the bars. This value can be a hex color, color name, or the column name from the dataframe
 #' @param border Color of the border of the bars
 #' @param opacity transparency level
+#' @param transition_duration Duration for the bars to transtion
 #'
 #' @return An HTML widget that displays a bar plot made with D3.js
 #' @export
@@ -20,14 +21,14 @@
 #' @examples
 #' # not run:
 #' # d3_bar(mtcars, am)
-d3_bar <- function (data, x_var, y_var = NULL, title = NULL, x_lab = NULL, y_lab = NULL, color = "black", border = NULL, opacity = 1) {
+d3_bar <- function (data, x_var, y_var = NULL, title = NULL, x_lab = NULL, y_lab = NULL, color = "black", border = NULL, opacity = 1, transition_duration = 0) {
 
 
   x_quo <- rlang::enquo(x_var)
   y_quo <- rlang::enquo(y_var)
 
-  x_name <- rlang::quo_name(enquo(x_var))
-  y_name <- rlang::quo_name(enquo(y_var))
+  x_name <- rlang::quo_name(rlang::enquo(x_var))
+  y_name <- rlang::quo_name(rlang::enquo(y_var))
   x_group <- rlang::quo(!!rlang::sym(x_name))
 
   if (is.null(x_lab)) x_lab <- x_name
@@ -54,5 +55,6 @@ d3_bar <- function (data, x_var, y_var = NULL, title = NULL, x_lab = NULL, y_lab
                       yaxis = list(title = y_lab),
                       bar = list(color = color,
                                  border = border,
-                                 opacity = opacity)))
+                                 opacity = opacity),
+                      transition_duration = transition_duration))
 }

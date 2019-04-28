@@ -53,7 +53,7 @@ var bar = g.selectAll(".bar")
 bar.append("rect")
     .attr("x", 1)
     .attr("width", x(bins[0].x1) - x(bins[0].x0) - 1)
-    .attr("height", function(d) { return graph_height - y(d.length); })
+    .attr("height", 0)
     .attr("opacity", opacity)
     .attr('stroke', border)
     .attr('fill', options.bar.color)
@@ -70,7 +70,11 @@ bar.append("rect")
        tt.transition().
        duration(500).
        style("opacity", 0);
-    });
+    })
+    .transition()
+    .ease(d3.easeLinear)
+    .duration(options.transition_duration)
+    .attr("height", function(d) { return graph_height - y(d.length); });
 
 // add the x Axis
 g.append("g")

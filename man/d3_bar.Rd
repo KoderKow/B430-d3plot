@@ -5,7 +5,8 @@
 \title{Bar plot made with D3}
 \usage{
 d3_bar(data, x_var, y_var = NULL, title = NULL, x_lab = NULL,
-  y_lab = NULL, color = "black", border = NULL, opacity = 1)
+  y_lab = NULL, color = "black", border = NULL, opacity = 1,
+  transition_duration = 0)
 }
 \arguments{
 \item{data}{A Dataset to use for plotting. Should be a dataframe}
@@ -25,6 +26,8 @@ d3_bar(data, x_var, y_var = NULL, title = NULL, x_lab = NULL,
 \item{border}{Color of the border of the bars}
 
 \item{opacity}{transparency level}
+
+\item{transition_duration}{Duration for the bars to transtion}
 }
 \value{
 An HTML widget that displays a bar plot made with D3.js
