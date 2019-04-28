@@ -4,24 +4,19 @@
 \alias{d3_histogram}
 \title{Bar plot made with D3}
 \usage{
-d3_histogram(data, x_var, y_var = NULL, title = NULL, x_lab = NULL,
-  y_lab = NULL, title_size = 18, sub_title = NULL,
-  sub_title_size = 12, x_lab_size = 14, y_lab_size = 14,
-  color = "black", border = NULL, opacity = 1, n_bins = NULL,
-  margin_l = 50, margin_r = 50, margin_b = 80, margin_t = 50)
+d3_histogram(data, x_var, title = NULL, x_lab = NULL, y_lab = NULL,
+  color = "black", border = NULL, opacity = 1)
 }
 \arguments{
 \item{data}{A Dataset to use for plotting. Should be a dataframe}
 
 \item{x_var}{Attribute to place on the x axis}
 
-\item{y_var}{Attribute for the y axis. If *y_var* is not specified or NULL, the *x_var* will be counted}
-
 \item{title}{Title for the plot, placed above plot}
 
 \item{x_lab}{X axis label. Default is *x_var's* object name}
 
-\item{y_lab}{Y axis label. Default is *y_var's* ovject name}
+\item{y_lab}{Y axis label. Default is "Frequency"}
 
 \item{color}{Color of the bars. This value can be a hex color, color name, or the column name from the dataframe}
 
@@ -37,5 +32,5 @@ Bar plot made with D3
 }
 \examples{
 # not run:
-# d3_histogram(mtcars, am)
+# d3_histogram(mtcars, mpg)
 }

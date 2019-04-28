@@ -54,8 +54,8 @@ var color = d3.scaleOrdinal(d3.schemeCategory10);
 svg.html("").selectAll('circle')
   .data(data)
   .enter().append('circle')
-  .attr('cx', function(d) { return xScale(d[options.xvar]); })
-  .attr('cy', function(d) { return yScale(d[options.yvar]); })
+  .attr('cx', function(d) { return xScale(x_min); })
+  .attr('cy', function(d) { return yScale(y_min); })
   .attr('r', function() { return size; })
   .attr('stroke-width', sw)
   .attr("opacity", opacity)
@@ -71,7 +71,11 @@ svg.html("").selectAll('circle')
        tt.transition().
        duration(500).
        style("opacity", 0);
-       });
+       })
+  .transition()
+  .duration(options.transition_duration)
+  .attr('cx', function(d) { return xScale(d[options.xvar]); })
+  .attr('cy', function(d) { return yScale(d[options.yvar]); });
 
 if(hex_check === true){
   svg.selectAll('circle')
