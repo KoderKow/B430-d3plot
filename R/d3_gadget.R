@@ -90,7 +90,7 @@ d3_gadget <- function() {
       if (input$viz_type == "Scatter") {
 
         r2d3(data = selected_data(),
-             script = here::here("inst", "d3_scatter.js"),
+             script = system.file("d3_scatter.js", package = "d3plot"),
              options = list(xvar = x_var(),
                             yvar = y_var(),
                             title = list(title = NULL,
@@ -124,7 +124,7 @@ d3_gadget <- function() {
             y = n
           )
 
-        r2d3(tmp, "inst/d3_bar.js",
+        r2d3(tmp, system.file("d3_bar.js", package = "d3plot"),
              options = list(xvar = x_var(),
                             yvar = y_var(),
                             title = list(title = NULL,
