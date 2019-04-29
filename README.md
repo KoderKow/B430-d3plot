@@ -11,6 +11,12 @@
     using the D3 plots
   - A basic implementation of OOP is built in for project requirements
 
+## Install
+
+``` r
+devtools::install_github("KoderKow/B430-d3plot")
+```
+
 ## Example
 
 Loading `d3plot`:
