@@ -23,22 +23,19 @@
 #' # d3_bar(mtcars, am)
 d3_bar <- function (data, x_var, y_var = NULL, title = NULL, x_lab = NULL, y_lab = NULL, color = "black", border = NULL, opacity = 1, transition_duration = 0) {
 
-
   x_quo <- rlang::enquo(x_var)
   y_quo <- rlang::enquo(y_var)
 
   x_name <- rlang::quo_name(rlang::enquo(x_var))
   y_name <- rlang::quo_name(rlang::enquo(y_var))
-  x_group <- rlang::quo(!!rlang::sym(x_name))
 
   if (is.null(x_lab)) x_lab <- x_name
-  if (is.null(y_var)) y_lab <- "Count"
 
   if (is.null(y_var)) {
     tmp <- data %>%
-      dplyr::count(!!x_group) %>%
+      dplyr::count(!!x_quo) %>%
       dplyr::mutate(
-        x = !!x_group,
+        x = !!x_quo,
         y = n
       )
   } else {

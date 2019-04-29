@@ -9,7 +9,7 @@
   - The package gives the ability for users to make D3 plots
   - There is a basic Shiny Gadget that lets users explore their data
     using the D3 plots
-  - A basic implementation of OOP is built in for project requirements
+    <!-- - A basic implementation of OOP is built in for project requirements -->
 
 ## Install
 
