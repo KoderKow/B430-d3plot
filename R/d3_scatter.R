@@ -31,7 +31,7 @@ d3_scatter <- function (data, x_var, y_var, title = NULL, x_lab = NULL, y_lab = 
   if(is.null(y_lab)) y_lab <- y_name
 
   r2d3(data = data,
-       script = "inst/d3_scatter.js",
+       script = "d3_scatter.js",
        height = 500, width = 500,
        options = list(xvar = x_name,
                       yvar = y_name,
