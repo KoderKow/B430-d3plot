@@ -35,7 +35,7 @@ d3_histogram <- function (data, x_var,
   n_bins <- sqrt(nrow(data))
 
   r2d3::r2d3(data = dplyr::pull(data, !!x_quo),
-       script = "inst/d3_histogram.js",
+       script = system.file("d3_histogram.js", package = "d3plot"),
        height = 500, width = 600,
        options = list(x_name = x_name,
                       title = list(title = title),

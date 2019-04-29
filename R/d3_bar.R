@@ -45,7 +45,7 @@ d3_bar <- function (data, x_var, y_var = NULL, title = NULL, x_lab = NULL, y_lab
   }
 
   r2d3::r2d3(data = tmp,
-       script = "inst/d3_bar.js",
+       script = system.file("d3_bar.js", package = "d3plot"),
        options = list(x_name = x_name,
                       y_name = y_name,
                       title = list(title = title),
