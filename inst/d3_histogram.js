@@ -86,6 +86,7 @@ g.append("g")
 g.append("text")
   .attr("transform", "translate(" + (margin_l + (graph_width - margin_l - margin_r) / 2) + " ," + (graph_height + margin_b*0.7) + ")")
   .style("text-anchor", "middle")
+  .style("font-size", "14px")
   .text(x_title);
 
 // add the y Axis
@@ -98,6 +99,7 @@ g.append("text")
   .attr("y", -margin_l*0.7)
   .attr("x", 0 - graph_height/2)
   .style("text-anchor", "middle")
+  .style("font-size", "14px")
   .text(y_title);
 
 // Title
