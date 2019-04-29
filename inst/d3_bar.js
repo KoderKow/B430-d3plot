@@ -123,3 +123,10 @@ svg.append('text')
   .style('font-family', 'sans-serif')
   .text(title_text);
 }
+
+// text label for the x axis
+svg.append("text")
+  .attr("transform", "translate(" + (50 + (svg_width() - 50 - 50) / 2) + " ," + (svg_height() - 5) + ")")
+  .style("text-anchor", "middle")
+  .style("font-size", "14px")
+  .text(x_title);

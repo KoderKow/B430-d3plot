@@ -28,14 +28,15 @@ d3_bar <- function (data, x_var, y_var = NULL, title = NULL, x_lab = NULL, y_lab
 
   x_name <- rlang::quo_name(rlang::enquo(x_var))
   y_name <- rlang::quo_name(rlang::enquo(y_var))
+  x_group <- rlang::quo(!!rlang::sym(x_name))
 
   if (is.null(x_lab)) x_lab <- x_name
 
   if (is.null(y_var)) {
     tmp <- data %>%
-      dplyr::count(!!x_quo) %>%
+      dplyr::count(!!x_group) %>%
       dplyr::mutate(
-        x = !!x_quo,
+        x = !!x_group,
         y = n
       )
   } else {
